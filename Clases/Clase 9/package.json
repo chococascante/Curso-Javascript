@@ -4,11 +4,15 @@
   "description": "Ejemplo de node para clase 9",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js",
+    "test": "jest"
   },
   "author": "Luis Cascante",
   "license": "ISC",
   "dependencies": {
     "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "jest": "^27.0.4"
   }
 }
