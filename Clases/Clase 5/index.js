@@ -50,3 +50,103 @@ function numeroParesImpar(valor) {
 
   return stringEjemplo;
 }
+
+// Ejercicio 6
+function interseccion(arr1, arr2) {
+  const resultado = [];
+  for (let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
+    if (i < arr1.length) {
+      if (arr2.includes(arr1[i]) && !resultado.includes[arr1[i]]) {
+        resultado.push(arr1[i]);
+      }
+    }
+    if (i < arr2.length) {
+      if (arr1.includes([arr2[i]]) && !resultado.includes[arr2[i]]) {
+        resultado.push(arr2[i]);
+      }
+    }
+  }
+
+  return resultado;
+}
+
+// Ejercicio 7
+function esArreglo(variable) {
+  return Array.isArray(variable);
+}
+
+// Ejercicio 8
+function clonarArreglo(arreglo) {
+  return arreglo.map((elemento) => elemento);
+}
+
+// Ejercicio 9
+const concatenarStrings = (arreglo) => {
+  return arreglo.join("");
+};
+
+// Ejercicio 10
+// Toma 1
+function formatearNumero(numero) {
+  let resultado = "";
+
+  if (typeof numero === "number") {
+    numero = numero.toString();
+  }
+
+  for (let i = 0; i < numero.length; i++) {
+    if (i === numero.length - 1) {
+      resultado += numero.charAt(i);
+    } else {
+      if (numero.charAt(i) % 2 !== NaN && numero.charAt(i + 1) % 2 !== NaN) {
+        if (numero.charAt(i) % 2 === 0 && numero.charAt(i + 1) % 2 === 0) {
+          resultado += numero.charAt(i) + "-";
+        } else if (
+          numero.charAt(i) % 2 !== 0 &&
+          numero.charAt(i + 1) % 2 !== 0
+        ) {
+          resultado += numero.charAt(i) + "*";
+        } else {
+          if (i !== 0) {
+            if (
+              resultado.charAt(i - 1) !== "-" &&
+              resultado.charAt(i - 1) !== "*"
+            ) {
+              resultado += numero.charAt(i);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return resultado;
+}
+
+// Ejercicio 11
+function barajarArreglo(arreglo) {
+  return arreglo.sort(() => 0.5 - Math.random());
+}
+
+// Ejercicio 13
+function diferencia(arr1, arr2) {
+  const resultado = [];
+  for (let i = 0; i < Math.max(arr1.length, arr2.length); i++) {
+    if (i < arr1.length) {
+      if (!arr2.includes(arr1[i]) && !resultado.includes[arr1[i]]) {
+        resultado.push(arr1[i]);
+      }
+    }
+    if (i < arr2.length) {
+      if (!arr1.includes([arr2[i]]) && !resultado.includes[arr2[i]]) {
+        resultado.push(arr2[i]);
+      }
+    }
+  }
+
+  return resultado;
+}
+
+const arreglo = [1, 2, 3, 4, 5, 6];
+const arreglo1 = [1, 2, 3, 4, 5, 6, 7];
+console.log(diferencia(arreglo, arreglo1));
