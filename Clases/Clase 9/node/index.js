@@ -77,6 +77,20 @@ app.get("/posts/:id/comments", async (req, res) => {
   }
 });
 
+app.get("/tipoCambio/:dia/:mes/:ano", async (req, res) => {
+  try {
+    const { dia, mes, ano } = req.params;
+
+    const respuesta = await axios.get(
+      `https://tipodecambio.paginasweb.cr/api/${dia}/${mes}/${ano}`
+    );
+
+    res.send(respuesta.data);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 app.listen(3000, () => {
   console.log("Servidor iniciado en puerto 3000...");
 });
